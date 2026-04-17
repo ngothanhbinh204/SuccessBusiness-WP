@@ -1,0 +1,181 @@
+{
+    "key": "group_khoa_hoc_details",
+    "title": "Course Details",
+    "fields": [
+        {
+            "key": "field_khoa_hoc_loai",
+            "label": "Loại khóa học",
+            "name": "loai_khoa_hoc",
+            "type": "taxonomy",
+            "taxonomy": "loai_khoa_hoc",
+            "field_type": "radio",
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "instructions": "Vui lòng chọn hoặc thêm Loại khóa học (Online / Offline)."
+        },
+        {
+            "key": "field_khoa_hoc_lp_id",
+            "label": "Khóa học LearnPress liên kết",
+            "name": "lp_course_id",
+            "type": "post_object",
+            "instructions": "Tìm và chọn Khóa học gốc bên LearnPress để hệ thống lấy link động điều hướng học viên vào khu vực học tập.",
+            "post_type": [
+                "lp_course"
+            ],
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_khoa_hoc_video",
+            "label": "Video giới thiệu",
+            "name": "video_url",
+            "type": "oembed"
+        },
+        {
+            "key": "field_khoa_hoc_start_date",
+            "label": "Lịch khai giảng (Date)",
+            "name": "start_date",
+            "type": "date_picker",
+            "instructions": "Hiển thị cho Card và Chi tiết (Ngày học Online hoặc Offline)",
+            "display_format": "d/m/Y",
+            "return_format": "d/m/Y"
+        },
+        {
+            "key": "field_khoa_hoc_location",
+            "label": "Địa điểm / Nền tảng học",
+            "name": "location",
+            "type": "text",
+            "instructions": "VD: Tầng 3, 123 ABC (Offline) hoặc Nền tảng Zoom / MS Teams (Online)"
+        },
+        {
+            "key": "field_khoa_hoc_duration",
+            "label": "Thời lượng",
+            "name": "duration",
+            "type": "text",
+            "instructions": "VD: 3 tháng, 12 buổi, 20 giờ..."
+        },
+        {
+            "key": "field_khoa_hoc_audiences",
+            "label": "Khóa học dành cho ai?",
+            "name": "target_audiences",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Thêm đối tượng",
+            "sub_fields": [
+                {
+                    "key": "field_khoa_hoc_audiences_desc",
+                    "label": "Mô tả",
+                    "name": "description",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_khoa_hoc_outcomes",
+            "label": "Giá trị nhận được",
+            "name": "course_outcomes",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Thêm giá trị",
+            "sub_fields": [
+                {
+                    "key": "field_khoa_hoc_outcomes_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "return_format": "url"
+                },
+                {
+                    "key": "field_khoa_hoc_outcomes_title",
+                    "label": "Tiêu đề",
+                    "name": "title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_khoa_hoc_outcomes_desc",
+                    "label": "Mô tả chi tiết",
+                    "name": "description",
+                    "type": "textarea"
+                }
+            ]
+        },
+        {
+            "key": "field_khoa_hoc_curriculum",
+            "label": "Lộ trình học tập",
+            "name": "curriculum_display",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Thêm Module",
+            "sub_fields": [
+                {
+                    "key": "field_khoa_hoc_curriculum_title",
+                    "label": "Tên Module / Chương",
+                    "name": "module_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_khoa_hoc_curriculum_content",
+                    "label": "Nội dung Module",
+                    "name": "module_content",
+                    "type": "wysiwyg",
+                    "media_upload": 0
+                }
+            ]
+        },
+        {
+            "key": "field_khoa_hoc_instructors",
+            "label": "Giảng viên",
+            "name": "instructors",
+            "type": "relationship",
+            "post_type": [
+                "giang_vien"
+            ],
+            "return_format": "object"
+        },
+        {
+            "key": "field_khoa_hoc_faqs",
+            "label": "Câu hỏi thường gặp",
+            "name": "course_faqs",
+            "type": "repeater",
+            "layout": "row",
+            "button_label": "Thêm câu hỏi",
+            "sub_fields": [
+                {
+                    "key": "field_khoa_hoc_faqs_q",
+                    "label": "Câu hỏi",
+                    "name": "question",
+                    "type": "text"
+                },
+                {
+                    "key": "field_khoa_hoc_faqs_a",
+                    "label": "Câu trả lời",
+                    "name": "answer",
+                    "type": "textarea",
+                    "rows": 4
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "khoa_hoc"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}

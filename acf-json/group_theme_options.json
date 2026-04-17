@@ -1,0 +1,123 @@
+{
+    "key": "group_theme_options",
+    "title": "Theme Options",
+    "fields": [
+        {
+            "key": "field_tab_footer",
+            "label": "Footer Settings",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_footer_logo",
+            "label": "Footer Logo",
+            "name": "footer_logo",
+            "type": "image",
+            "return_format": "url"
+        },
+        {
+            "key": "field_footer_left_title",
+            "label": "Tiêu đề Footer Trái",
+            "name": "footer_left_title",
+            "type": "text"
+        },
+        {
+            "key": "field_footer_left_content",
+            "label": "Nội dung Footer Trái",
+            "name": "footer_left_content",
+            "type": "wysiwyg",
+            "instructions": "Thông tin công ty, địa chỉ, hotline, email..."
+        },
+        {
+            "key": "field_footer_right_cer",
+            "label": "Chứng nhận (Footer phải)",
+            "name": "footer_right_cer",
+            "type": "image",
+            "return_format": "url"
+        },
+        {
+            "key": "field_footer_socials",
+            "label": "Mạng xã hội (Footer Top)",
+            "name": "footer_socials",
+            "type": "repeater",
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_footer_social_icon",
+                    "label": "Icon Mạng Xã Hội",
+                    "name": "icon",
+                    "type": "select",
+                    "choices": {
+                        "fa-facebook-f": "Facebook",
+                        "fa-youtube": "YouTube",
+                        "fa-tiktok": "TikTok",
+                        "fa-instagram": "Instagram",
+                        "fa-linkedin-in": "LinkedIn"
+                    },
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_footer_social_link",
+                    "label": "Đường dẫn",
+                    "name": "link",
+                    "type": "url"
+                }
+            ]
+        },
+        {
+            "key": "field_tab_fixed_cta",
+            "label": "Fixed CTA (Tool Gọi/Nhắn Tin)",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_cta_phone",
+            "label": "Số điện thoại hiển thị",
+            "name": "cta_phone",
+            "type": "text",
+            "instructions": "VD: 1900 2273 – (028) 7100 0001"
+        },
+        {
+            "key": "field_cta_socials",
+            "label": "Danh sách các nút Social",
+            "name": "cta_socials",
+            "type": "repeater",
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_cta_social_icon",
+                    "label": "FontAwesome Icon Class",
+                    "name": "icon",
+                    "type": "text",
+                    "instructions": "VD: fa-light fa-envelope, fa-brands fa-messenger..."
+                },
+                {
+                    "key": "field_cta_social_link",
+                    "label": "Đường dẫn (Link)",
+                    "name": "link",
+                    "type": "url"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}

@@ -12,6 +12,7 @@ function register_my_menu()
 		'footer-2' => __('Footer 2', 'canhcamtheme'),
 		'footer-3' => __('Footer 3', 'canhcamtheme'),
 		'footer-4' => __('Footer 4', 'canhcamtheme'),
+		'footer-sitemap' => __('Footer Site map', 'canhcamtheme'),
 	);
 	register_nav_menus($locations);
 }
@@ -802,4 +803,51 @@ function create_taxonomy($key, $config = array())
 	$result = register_taxonomy($key, $config['object_type'], $args);
 
 	return !is_wp_error($result);
+}
+
+/**
+ * Shortcode hiển thị bộ chọn ngôn ngữ WPML
+ * Cú pháp: [wpml_lang_selector]
+ */
+add_shortcode('wpml_lang_selector', 'canhcam_wpml_lang_selector');
+function canhcam_wpml_lang_selector() {
+    ob_start();
+    
+    // Nếu có WPML đang kích hoạt
+    if (function_exists('icl_get_languages')) {
+        $languages = icl_get_languages('skip_missing=0&orderby=code');
+        if (!empty($languages)) {
+            echo '<ul>';
+            foreach ($languages as $l) {
+                if ($l['active']) {
+                    echo '<li class="wpml-ls-item"><a href="' . esc_url($l['url']) . '"><img src="' . esc_url($l['country_flag_url']) . '" alt="' . esc_attr($l['language_code']) . '" /><span class="wpml-ls-native">' . esc_html(strtoupper($l['language_code'])) . '</span></a>';
+                    // Hiển thị các ngôn ngữ còn lại trong sub-menu
+                    echo '<ul>';
+                    foreach ($languages as $sub_l) {
+                        if (!$sub_l['active']) {
+                            echo '<li><a href="' . esc_url($sub_l['url']) . '"><img src="' . esc_url($sub_l['country_flag_url']) . '" alt="' . esc_attr($sub_l['language_code']) . '" /><span>' . esc_html(strtoupper($sub_l['language_code'])) . '</span></a></li>';
+                        }
+                    }
+                    echo '</ul>';
+                    echo '</li>';
+                    break; // Render cấu trúc từ ngôn ngữ Active làm Root
+                }
+            }
+            echo '</ul>';
+        }
+    } else {
+        // Fallback HTML tĩnh nếu WPML chưa được cài đặt
+        ?>
+        <ul>
+            <li class="wpml-ls-item">
+                <a href="#"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/VN.png" alt="VN" /><span class="wpml-ls-native">VN</span></a>
+                <ul>
+                    <li><a href="#"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/EN.png" alt="EN" /><span>EN</span></a></li>
+                </ul>
+            </li>
+        </ul>
+        <?php
+    }
+    
+    return ob_get_clean();
 }

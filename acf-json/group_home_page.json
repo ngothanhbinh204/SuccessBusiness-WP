@@ -1,0 +1,273 @@
+{
+    "key": "group_home_page",
+    "title": "Home Page Content",
+    "fields": [
+        {
+            "key": "field_tab_banner",
+            "label": "Banner",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_home_banner",
+            "label": "Slides",
+            "name": "home_banner",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                { "key": "field_hb_img", "label": "Image", "name": "image", "type": "image", "return_format": "array" },
+                { "key": "field_hb_head", "label": "Heading", "name": "heading", "type": "text" },
+                { "key": "field_hb_sub", "label": "Sub Title", "name": "sub_title", "type": "text" },
+                { "key": "field_hb_btn1", "label": "Button 1", "name": "btn_1", "type": "link", "return_format": "array" },
+                { "key": "field_hb_btn2", "label": "Button 2", "name": "btn_2", "type": "link", "return_format": "array" }
+            ]
+        },
+        {
+            "key": "field_tab_home_1",
+            "label": "Đào tạo 1",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_home_1_title",
+            "label": "Tiêu đề",
+            "name": "home_1_title",
+            "type": "text",
+            "default_value": "Chương trình đào tạo"
+        },
+        {
+            "key": "field_home_1_tabs",
+            "label": "Các Tab Khóa Học",
+            "name": "home_1_tabs",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                { "key": "field_h1_t_title", "label": "Tên Tab", "name": "tab_title", "type": "text" },
+                { "key": "field_h1_t_courses", "label": "Chọn Khóa Học", "name": "courses", "type": "relationship", "post_type": ["khoa_hoc"], "return_format": "object" }
+            ]
+        },
+        {
+            "key": "field_tab_home_2",
+            "label": "Giới thiệu",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_home_2_title",
+            "label": "Tiêu đề",
+            "name": "home_2_title",
+            "type": "text"
+        },
+        {
+            "key": "field_home_2_content",
+            "label": "Nội dung",
+            "name": "home_2_content",
+            "type": "wysiwyg"
+        },
+        {
+            "key": "field_home_2_count",
+            "label": "Thống kê",
+            "name": "home_2_counters",
+            "type": "repeater",
+            "layout": "table",
+            "sub_fields": [
+                { "key": "field_h2_c_num", "label": "Số", "name": "number", "type": "number" },
+                { "key": "field_h2_c_label", "label": "Nhãn", "name": "label", "type": "text" }
+            ]
+        },
+        {
+            "key": "field_home_2_btn",
+            "label": "Nút Link",
+            "name": "home_2_btn",
+            "type": "link",
+            "return_format": "array"
+        },
+        {
+            "key": "field_home_2_img",
+            "label": "Hình ảnh",
+            "name": "home_2_image",
+            "type": "image",
+            "return_format": "array"
+        },
+        {
+            "key": "field_tab_home_3",
+            "label": "Diễn giả",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_home_3_title",
+            "label": "Tiêu đề",
+            "name": "home_3_title",
+            "type": "text",
+            "default_value": "Diễn giả"
+        },
+        {
+            "key": "field_home_3_sp",
+            "label": "Chọn Diễn giả",
+            "name": "home_3_speakers",
+            "type": "relationship",
+            "post_type": ["giang_vien"],
+            "return_format": "object"
+        },
+        {
+            "key": "field_tab_home_4",
+            "label": "Sự kiện",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_home_4_events",
+            "label": "Danh sách Sự kiện",
+            "name": "home_4_events",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                { "key": "field_h4_e_img", "label": "Hình ảnh", "name": "image", "type": "image", "return_format": "array" },
+                { "key": "field_h4_e_lt", "label": "Tiêu đề Trái", "name": "left_title", "type": "text" },
+                { "key": "field_h4_e_ls", "label": "Phụ đề Trái", "name": "left_subtitle", "type": "textarea" },
+                { "key": "field_h4_e_btn", "label": "Nút Link", "name": "btn", "type": "link", "return_format": "array" },
+                { "key": "field_h4_e_rt", "label": "Tiêu đề Phải", "name": "right_title", "type": "text" },
+                { "key": "field_h4_e_rs", "label": "Phụ đề Phải", "name": "right_subtitle", "type": "text" },
+                { "key": "field_h4_e_time", "label": "Thời gian", "name": "time", "type": "text" }
+            ]
+        },
+        {
+            "key": "field_tab_home_5",
+            "label": "Thành công",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_home_5_title",
+            "label": "Tiêu đề",
+            "name": "home_5_title",
+            "type": "text",
+            "default_value": "Câu chuyện thành công"
+        },
+        {
+            "key": "field_home_5_ts",
+            "label": "Testimonials",
+            "name": "home_5_testimonials",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                { "key": "field_h5_t_cn", "label": "Tên khóa học", "name": "course_name", "type": "text" },
+                { "key": "field_h5_t_ct", "label": "Nội dung", "name": "content", "type": "wysiwyg" },
+                { "key": "field_h5_t_av", "label": "Avatar", "name": "avatar", "type": "image", "return_format": "array" },
+                { "key": "field_h5_t_an", "label": "Tên Tác giả", "name": "author_name", "type": "text" },
+                { "key": "field_h5_t_ap", "label": "Chức vụ", "name": "author_pos", "type": "text" }
+            ]
+        },
+        {
+            "key": "field_home_5_pt",
+            "label": "Đối tác (Logo)",
+            "name": "home_5_partners",
+            "type": "repeater",
+            "layout": "table",
+            "sub_fields": [
+                { "key": "field_h5_p_lg", "label": "Logo", "name": "logo", "type": "image", "return_format": "array" }
+            ]
+        },
+        {
+            "key": "field_tab_home_6",
+            "label": "Đào tạo 2",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_home_6_title",
+            "label": "Tiêu đề",
+            "name": "home_6_title",
+            "type": "text",
+            "default_value": "Chương trình đào tạo"
+        },
+        {
+            "key": "field_home_6_tabs",
+            "label": "Các Tab Khóa Học",
+            "name": "home_6_tabs",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                { "key": "field_h6_t_title", "label": "Tên Tab", "name": "tab_title", "type": "text" },
+                { "key": "field_h6_t_courses", "label": "Chọn Khóa Học", "name": "courses", "type": "relationship", "post_type": ["khoa_hoc"], "return_format": "object" }
+            ]
+        },
+        {
+            "key": "field_tab_home_7",
+            "label": "Truyền thông",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_home_7_title",
+            "label": "Tiêu đề",
+            "name": "home_7_title",
+            "type": "text",
+            "default_value": "Truyền Thông Nói Gì<br>về Success Business School"
+        },
+        {
+            "key": "field_home_7_news",
+            "label": "Danh sách Báo chí",
+            "name": "home_7_news",
+            "type": "repeater",
+            "layout": "table",
+            "sub_fields": [
+                { "key": "field_h7_n_img", "label": "Hình ảnh", "name": "image", "type": "image", "return_format": "array" },
+                { "key": "field_h7_n_t", "label": "Tiêu đề", "name": "title", "type": "text" },
+                { "key": "field_h7_n_l", "label": "Link", "name": "link", "type": "url" }
+            ]
+        },
+        {
+            "key": "field_tab_home_8",
+            "label": "Liên hệ",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_home_8_title",
+            "label": "Tiêu đề",
+            "name": "home_8_title",
+            "type": "text",
+            "default_value": "Hợp tác cùng <strong>SUCCESS BUSINESS</strong>"
+        },
+        {
+            "key": "field_home_8_sub",
+            "label": "Mô tả",
+            "name": "home_8_subtitle",
+            "type": "wysiwyg"
+        },
+        {
+            "key": "field_home_8_img",
+            "label": "Hình ảnh bên trái",
+            "name": "home_8_image",
+            "type": "image",
+            "return_format": "array"
+        },
+        {
+            "key": "field_home_8_frm",
+            "label": "Shortcode Form",
+            "name": "home_8_form_shortcode",
+            "type": "text",
+            "instructions": "VD: [contact-form-7 id=\"xxx\" title=\"Contact\"]"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates/template-home.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}
