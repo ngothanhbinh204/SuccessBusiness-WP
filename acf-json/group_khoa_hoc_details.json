@@ -1,7 +1,65 @@
 {
     "key": "group_khoa_hoc_details",
     "title": "Course Details",
+    "style": "default",
     "fields": [
+        {
+            "key": "field_tab_kh_banner",
+            "label": "Banner",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_kh_banner_img",
+            "label": "Hình nền Banner",
+            "name": "kh_banner_img",
+            "type": "image",
+            "return_format": "array"
+        },
+        {
+            "key": "field_tab_kh_cta",
+            "label": "Nút CTA (dùng chung toàn trang)",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_kh_btn_register",
+            "label": "Nút Đăng ký khóa học",
+            "name": "kh_btn_register",
+            "type": "link",
+            "return_format": "array",
+            "instructions": "URL đăng ký khóa học (LearnPress hoặc trang đăng ký riêng)"
+        },
+        {
+            "key": "field_kh_btn_register_title",
+            "label": "Text nút Đăng ký",
+            "name": "kh_btn_register_title",
+            "type": "text",
+            "default_value": "Đăng ký khóa học"
+        },
+        {
+            "key": "field_kh_brochure_btn_title",
+            "label": "Text nút Tải Brochure",
+            "name": "kh_brochure_btn_title",
+            "type": "text",
+            "default_value": "Tải brochure"
+        },
+        {
+            "key": "field_kh_brochure_file",
+            "label": "File Brochure (PDF)",
+            "name": "kh_brochure_file",
+            "type": "file",
+            "return_format": "url",
+            "mime_types": "pdf",
+            "instructions": "Upload file PDF brochure – sẽ tự động cho tải sau khi người dùng điền form"
+        },
+
+        {
+            "key": "field_tab_kh_1",
+            "label": "Tổng quan",
+            "type": "tab",
+            "placement": "top"
+        },
         {
             "key": "field_khoa_hoc_loai",
             "label": "Loại khóa học",
@@ -27,34 +85,45 @@
             "return_format": "id",
             "ui": 1
         },
+
         {
-            "key": "field_khoa_hoc_video",
-            "label": "Video giới thiệu",
-            "name": "video_url",
-            "type": "oembed"
-        },
-        {
-            "key": "field_khoa_hoc_start_date",
-            "label": "Lịch khai giảng (Date)",
-            "name": "start_date",
-            "type": "date_picker",
-            "instructions": "Hiển thị cho Card và Chi tiết (Ngày học Online hoặc Offline)",
-            "display_format": "d/m/Y",
-            "return_format": "d/m/Y"
-        },
-        {
-            "key": "field_khoa_hoc_location",
-            "label": "Địa điểm / Nền tảng học",
-            "name": "location",
+            "key": "field_kh1_subtitle",
+            "label": "Phụ đề (tiếng Việt)",
+            "name": "kh1_subtitle",
             "type": "text",
-            "instructions": "VD: Tầng 3, 123 ABC (Offline) hoặc Nền tảng Zoom / MS Teams (Online)"
+            "default_value": "Quản trị hiệu quả"
         },
         {
-            "key": "field_khoa_hoc_duration",
-            "label": "Thời lượng",
-            "name": "duration",
+            "key": "field_kh1_description",
+            "label": "Mô tả ngắn",
+            "name": "kh1_description",
+            "type": "wysiwyg"
+        },
+        {
+            "key": "field_kh1_hero_image",
+            "label": "Hình ảnh Hero (cột phải)",
+            "name": "kh1_hero_image",
+            "type": "image",
+            "return_format": "array"
+        },
+        {
+            "key": "field_tab_kh_2",
+            "label": "Khóa học dành cho (Section 2)",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_kh2_heading",
+            "label": "Tiêu đề",
+            "name": "kh2_heading",
             "type": "text",
-            "instructions": "VD: 3 tháng, 12 buổi, 20 giờ..."
+            "default_value": "Khoá học dành cho"
+        },
+        {
+            "key": "field_kh2_subtitle",
+            "label": "Mô tả ngắn",
+            "name": "kh2_subtitle",
+            "type": "text"
         },
         {
             "key": "field_khoa_hoc_audiences",
@@ -73,51 +142,78 @@
             ]
         },
         {
+            "key": "field_kh2_gallery",
+            "label": "Thư viện ảnh Swiper",
+            "name": "kh2_gallery",
+            "type": "gallery",
+            "return_format": "array"
+        },
+        {
+            "key": "field_tab_kh_3",
+            "label": "Giá trị nhận được (Section 3)",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_kh3_heading",
+            "label": "Tiêu đề",
+            "name": "kh3_heading",
+            "type": "text",
+            "default_value": "Giá trị nhận được"
+        },
+        {
             "key": "field_khoa_hoc_outcomes",
-            "label": "Giá trị nhận được",
+            "label": "Danh sách giá trị (check list)",
             "name": "course_outcomes",
             "type": "repeater",
-            "layout": "block",
+            "layout": "table",
             "button_label": "Thêm giá trị",
             "sub_fields": [
                 {
-                    "key": "field_khoa_hoc_outcomes_icon",
-                    "label": "Icon",
-                    "name": "icon",
-                    "type": "image",
-                    "return_format": "url"
-                },
-                {
                     "key": "field_khoa_hoc_outcomes_title",
-                    "label": "Tiêu đề",
+                    "label": "Nội dung",
                     "name": "title",
                     "type": "text"
-                },
-                {
-                    "key": "field_khoa_hoc_outcomes_desc",
-                    "label": "Mô tả chi tiết",
-                    "name": "description",
-                    "type": "textarea"
                 }
             ]
         },
         {
+            "key": "field_kh3_image",
+            "label": "Hình ảnh bên phải (parallax)",
+            "name": "kh3_image",
+            "type": "image",
+            "return_format": "array"
+        },
+        {
+            "key": "field_tab_kh_4",
+            "label": "Lộ trình học (Section 4)",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
             "key": "field_khoa_hoc_curriculum",
-            "label": "Lộ trình học tập",
+            "label": "Lộ trình học tập (Sync Swiper 3 cột)",
             "name": "curriculum_display",
             "type": "repeater",
-            "layout": "block",
-            "button_label": "Thêm Module",
+            "layout": "row",
+            "button_label": "Thêm Buổi học",
             "sub_fields": [
                 {
                     "key": "field_khoa_hoc_curriculum_title",
-                    "label": "Tên Module / Chương",
+                    "label": "Tên Buổi / Chương",
                     "name": "module_title",
                     "type": "text"
                 },
                 {
+                    "key": "field_khoa_hoc_curriculum_image",
+                    "label": "Hình ảnh (cột giữa swiper)",
+                    "name": "module_image",
+                    "type": "image",
+                    "return_format": "array"
+                },
+                {
                     "key": "field_khoa_hoc_curriculum_content",
-                    "label": "Nội dung Module",
+                    "label": "Nội dung mô tả",
                     "name": "module_content",
                     "type": "wysiwyg",
                     "media_upload": 0
@@ -129,10 +225,14 @@
             "label": "Giảng viên",
             "name": "instructors",
             "type": "relationship",
-            "post_type": [
-                "giang_vien"
-            ],
+            "post_type": ["giang_vien"],
             "return_format": "object"
+        },
+        {
+            "key": "field_tab_kh_5",
+            "label": "FAQ (Section 5)",
+            "type": "tab",
+            "placement": "top"
         },
         {
             "key": "field_khoa_hoc_faqs",
@@ -152,8 +252,8 @@
                     "key": "field_khoa_hoc_faqs_a",
                     "label": "Câu trả lời",
                     "name": "answer",
-                    "type": "textarea",
-                    "rows": 4
+                    "type": "wysiwyg",
+                    "media_upload": 0
                 }
             ]
         }

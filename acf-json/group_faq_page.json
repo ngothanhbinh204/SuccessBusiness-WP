@@ -1,0 +1,97 @@
+{
+    "key": "group_faq_page",
+    "title": "FAQ Page Content",
+    "style": "default",
+    "fields": [
+        {
+            "key": "field_tab_faq_banner",
+            "label": "Banner",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_faq_banner_img",
+            "label": "Hình nền Banner",
+            "name": "faq_banner_img",
+            "type": "image",
+            "return_format": "array"
+        },
+        {
+            "key": "field_tab_faq_section",
+            "label": "Nội dung FAQ",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_faq_heading",
+            "label": "Tiêu đề trang",
+            "name": "faq_heading",
+            "type": "text",
+            "default_value": "Hỗ trợ khách hàng"
+        },
+        {
+            "key": "field_faq_icon",
+            "label": "Icon FAQ",
+            "name": "faq_icon",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Icon hiển thị bên phải tiêu đề mỗi câu hỏi. Để trống sẽ dùng icon mặc định trong thư mục /img/."
+        },
+        {
+            "key": "field_faq_filter_tabs",
+            "label": "Danh mục lọc",
+            "name": "faq_filter_tabs",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Thêm danh mục",
+            "sub_fields": [
+                {
+                    "key": "field_faq_ft_label",
+                    "label": "Tên danh mục",
+                    "name": "tab_label",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_faq_items",
+            "label": "Danh sách câu hỏi",
+            "name": "faq_items",
+            "type": "repeater",
+            "layout": "row",
+            "button_label": "Thêm câu hỏi",
+            "sub_fields": [
+                {
+                    "key": "field_faq_i_question",
+                    "label": "Câu hỏi",
+                    "name": "question",
+                    "type": "text"
+                },
+                {
+                    "key": "field_faq_i_answer",
+                    "label": "Câu trả lời",
+                    "name": "answer",
+                    "type": "wysiwyg"
+                },
+                {
+                    "key": "field_faq_i_category",
+                    "label": "Danh mục (để lọc)",
+                    "name": "tab_category",
+                    "type": "text",
+                    "instructions": "Nhập tên danh mục khớp với tab lọc phía trên. Ví dụ: Public, Online. Để trống nếu câu hỏi thuộc tất cả."
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates/template-faq.php"
+            }
+        ]
+    ],
+    "label_placement": "top",
+    "instruction_placement": "label"
+}

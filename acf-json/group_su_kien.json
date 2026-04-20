@@ -1,0 +1,74 @@
+{
+    "key": "group_su_kien",
+    "title": "Sự Kiện - Nội dung",
+    "fields": [
+        {
+            "key": "field_sk_tab_info",
+            "label": "Thông tin Sự kiện",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_sk_left_subtitle",
+            "label": "Mô tả ngắn (cột trái)",
+            "name": "sk_left_subtitle",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "instructions": "Hiển thị phía dưới tiêu đề sự kiện (cột trái)"
+        },
+        {
+            "key": "field_sk_btn",
+            "label": "Nút Link",
+            "name": "sk_btn",
+            "type": "link",
+            "return_format": "array"
+        },
+        {
+            "key": "field_sk_tab_right",
+            "label": "Cột phải",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_sk_right_title",
+            "label": "Tiêu đề (cột phải)",
+            "name": "sk_right_title",
+            "type": "text",
+            "instructions": "VD: Hội Thảo Quản Trị"
+        },
+        {
+            "key": "field_sk_right_subtitle",
+            "label": "Phụ đề (cột phải)",
+            "name": "sk_right_subtitle",
+            "type": "text",
+            "instructions": "VD: Hiệu quả trong tầm tay"
+        },
+        {
+            "key": "field_sk_time",
+            "label": "Thời gian diễn ra",
+            "name": "sk_time",
+            "type": "text",
+            "instructions": "VD: 09:00 - 12:00, 25/05/2026 | Hội trường A"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "su_kien"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ["the_content"],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}

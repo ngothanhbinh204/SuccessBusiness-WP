@@ -1,6 +1,10 @@
 <?php
+/**
+ * Section 7: Truyền thông – chọn bài viết tùy ý qua relationship field
+ * ACF field: home_7_news (relationship: post, return: object)
+ */
 $title = get_field('home_7_title') ?: 'Truyền Thông Nói Gì<br>về Success Business School';
-$news = get_field('home_7_news');
+$news  = get_field('home_7_news'); // array of WP_Post objects
 if ($news):
 ?>
 <section class="section-home-7">
@@ -19,18 +23,18 @@ if ($news):
                 <div class="swiper-column-auto auto-3-column" data-id-swiper="home-7" data-swiper-options='{"speed": 1200 }'>
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            <?php foreach ($news as $item): 
-                                $img = $item['image'];
-                                $item_title = $item['title'];
-                                $link = $item['link'] ?: 'javascript:void(0)';
+                            <?php foreach ($news as $post_item):
+                                $item_id    = $post_item->ID;
+                                $item_title = $post_item->post_title;
+                                $link       = get_permalink($item_id);
+                                $img_url    = get_the_post_thumbnail_url($item_id, 'large') ?: 'https://picsum.photos/440/276';
+                                $img_alt    = $item_title;
                             ?>
                             <div class="swiper-slide">
                                 <a class="card-school group" href="<?php echo esc_url($link); ?>" target="_blank">
                                     <div class="card-img">
                                         <div class="img img-parallax ratio:pt-[276_440]" data-gsap-options='{"type": "img-parallax-percent", "yPercent": 20, "extra": 5}'>
-                                            <?php if($img): ?>
-                                            <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>" />
-                                            <?php endif; ?>
+                                            <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($img_alt); ?>" />
                                         </div>
                                     </div>
                                     <div class="card-title">

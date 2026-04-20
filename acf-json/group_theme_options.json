@@ -3,6 +3,27 @@
     "title": "Theme Options",
     "fields": [
         {
+            "key": "field_tab_archive_banners",
+            "label": "Banner Trang Danh Sách",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_course_archive_banner_img",
+            "label": "Banner trang Danh sách Khóa học",
+            "name": "course_archive_banner_img",
+            "type": "image",
+            "return_format": "array"
+        },
+        {
+            "key": "field_course_archive_banner_title",
+            "label": "Tiêu đề banner trang Khóa học",
+            "name": "course_archive_banner_title",
+            "type": "text",
+            "default_value": "Chương trình đào tạo"
+        },
+        {
             "key": "field_tab_footer",
             "label": "Footer Settings",
             "name": "",
@@ -64,6 +85,20 @@
                     "type": "url"
                 }
             ]
+        },
+        {
+            "key": "field_tab_brochure",
+            "label": "Popup Brochure",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_kh_brochure_form_shortcode",
+            "label": "Shortcode Form Popup Tải Brochure (CF7)",
+            "name": "kh_brochure_form_shortcode",
+            "type": "text",
+            "instructions": "VD: [contact-form-7 id=\"123\" title=\"Brochure Form\"] – Dùng chung cho tất cả trang khóa học"
         },
         {
             "key": "field_tab_fixed_cta",

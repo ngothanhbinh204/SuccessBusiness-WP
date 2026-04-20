@@ -1,0 +1,95 @@
+{
+    "key": "group_contact_page",
+    "title": "Contact Page Content",
+    "style": "default",
+    "fields": [
+        {
+            "key": "field_tab_ct_banner",
+            "label": "Banner",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_ct_breadcrumb_title",
+            "label": "Tiêu đề Breadcrumb",
+            "name": "ct_breadcrumb_title",
+            "type": "text",
+            "instructions": "Nếu để trống sẽ tự lấy tiêu đề trang"
+        },
+        {
+            "key": "field_tab_ct_contact",
+            "label": "Thông tin liên hệ",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_ct_eyebrow",
+            "label": "Chữ nhỏ phía trên tiêu đề",
+            "name": "ct_eyebrow",
+            "type": "text",
+            "default_value": "Xin chào chúng tôi là"
+        },
+        {
+            "key": "field_ct_company_name",
+            "label": "Tên công ty / Tiêu đề chính",
+            "name": "ct_company_name",
+            "type": "text",
+            "default_value": "KC Hà Tĩnh"
+        },
+        {
+            "key": "field_ct_contact_items",
+            "label": "Danh sách thông tin liên hệ",
+            "name": "ct_contact_items",
+            "type": "repeater",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_ct_ci_icon",
+                    "label": "Class Icon (Font Awesome)",
+                    "name": "icon_class",
+                    "type": "text",
+                    "instructions": "Ví dụ: fa-solid fa-location-dot"
+                },
+                {
+                    "key": "field_ct_ci_content",
+                    "label": "Nội dung liên hệ",
+                    "name": "content",
+                    "type": "wysiwyg"
+                }
+            ]
+        },
+        {
+            "key": "field_ct_map_url",
+            "label": "Đường dẫn Google Maps Embed",
+            "name": "ct_map_url",
+            "type": "textarea",
+            "rows": 3,
+            "instructions": ""
+        },
+        {
+            "key": "field_ct_subtitle",
+            "label": "Phụ đề trên form liên hệ",
+            "name": "ct_subtitle",
+            "type": "wysiwyg",
+            "default_value": "Mọi sự hợp tác tốt đẹp đều bắt đầu từ một cuộc trò chuyện. Hãy liên hệ với chúng tôi, mọi mong muốn của bạn <strong>sẽ được lắng nghe.</strong>"
+        },
+        {
+            "key": "field_ct_form_shortcode",
+            "label": "Shortcode Form liên hệ (CF7)",
+            "name": "ct_form_shortcode",
+            "type": "text",
+            "instructions": "Ví dụ: [contact-form-7 id=\"123\" title=\"Contact Form\"]"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates/template-contact.php"
+            }
+        ]
+    ],
+    "label_placement": "top",
+    "instruction_placement": "label"
+}

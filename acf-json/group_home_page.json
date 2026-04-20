@@ -36,15 +36,15 @@
             "default_value": "Chương trình đào tạo"
         },
         {
-            "key": "field_home_1_tabs",
-            "label": "Các Tab Khóa Học",
-            "name": "home_1_tabs",
-            "type": "repeater",
-            "layout": "block",
-            "sub_fields": [
-                { "key": "field_h1_t_title", "label": "Tên Tab", "name": "tab_title", "type": "text" },
-                { "key": "field_h1_t_courses", "label": "Chọn Khóa Học", "name": "courses", "type": "relationship", "post_type": ["khoa_hoc"], "return_format": "object" }
-            ]
+            "key": "field_home_1_loai_kh",
+            "label": "Chọn Loại Khóa Học hiển thị",
+            "name": "home_1_loai_kh",
+            "type": "taxonomy",
+            "taxonomy": "loai_khoa_hoc",
+            "field_type": "multi_select",
+            "return_format": "object",
+            "allow_null": 0,
+            "instructions": "Chọn các loại khóa học muốn hiển thị theo tab. Để trống = hiển thị tất cả."
         },
         {
             "key": "field_tab_home_2",
@@ -118,19 +118,16 @@
         },
         {
             "key": "field_home_4_events",
-            "label": "Danh sách Sự kiện",
+            "label": "Chọn Sự kiện hiển thị",
             "name": "home_4_events",
-            "type": "repeater",
-            "layout": "block",
-            "sub_fields": [
-                { "key": "field_h4_e_img", "label": "Hình ảnh", "name": "image", "type": "image", "return_format": "array" },
-                { "key": "field_h4_e_lt", "label": "Tiêu đề Trái", "name": "left_title", "type": "text" },
-                { "key": "field_h4_e_ls", "label": "Phụ đề Trái", "name": "left_subtitle", "type": "textarea" },
-                { "key": "field_h4_e_btn", "label": "Nút Link", "name": "btn", "type": "link", "return_format": "array" },
-                { "key": "field_h4_e_rt", "label": "Tiêu đề Phải", "name": "right_title", "type": "text" },
-                { "key": "field_h4_e_rs", "label": "Phụ đề Phải", "name": "right_subtitle", "type": "text" },
-                { "key": "field_h4_e_time", "label": "Thời gian", "name": "time", "type": "text" }
-            ]
+            "type": "relationship",
+            "post_type": ["su_kien"],
+            "filters": ["search"],
+            "return_format": "object",
+            "min": 0,
+            "max": 0,
+            "elements": ["featured_image"],
+            "instructions": "Chọn các sự kiện muốn hiển thị trên trang chủ."
         },
         {
             "key": "field_tab_home_5",
@@ -150,7 +147,7 @@
             "label": "Testimonials",
             "name": "home_5_testimonials",
             "type": "repeater",
-            "layout": "block",
+            "layout": "row",
             "sub_fields": [
                 { "key": "field_h5_t_cn", "label": "Tên khóa học", "name": "course_name", "type": "text" },
                 { "key": "field_h5_t_ct", "label": "Nội dung", "name": "content", "type": "wysiwyg" },
@@ -183,15 +180,15 @@
             "default_value": "Chương trình đào tạo"
         },
         {
-            "key": "field_home_6_tabs",
-            "label": "Các Tab Khóa Học",
-            "name": "home_6_tabs",
-            "type": "repeater",
-            "layout": "block",
-            "sub_fields": [
-                { "key": "field_h6_t_title", "label": "Tên Tab", "name": "tab_title", "type": "text" },
-                { "key": "field_h6_t_courses", "label": "Chọn Khóa Học", "name": "courses", "type": "relationship", "post_type": ["khoa_hoc"], "return_format": "object" }
-            ]
+            "key": "field_home_6_categories",
+            "label": "Chọn Danh mục Bài viết hiển thị",
+            "name": "home_6_categories",
+            "type": "taxonomy",
+            "taxonomy": "category",
+            "field_type": "multi_select",
+            "return_format": "object",
+            "allow_null": 0,
+            "instructions": "Chọn các danh mục bài viết muốn hiển thị theo tab. Để trống = hiển thị tất cả."
         },
         {
             "key": "field_tab_home_7",
@@ -208,15 +205,17 @@
         },
         {
             "key": "field_home_7_news",
-            "label": "Danh sách Báo chí",
+            "label": "Chọn Bài viết Truyền thông",
             "name": "home_7_news",
-            "type": "repeater",
-            "layout": "table",
-            "sub_fields": [
-                { "key": "field_h7_n_img", "label": "Hình ảnh", "name": "image", "type": "image", "return_format": "array" },
-                { "key": "field_h7_n_t", "label": "Tiêu đề", "name": "title", "type": "text" },
-                { "key": "field_h7_n_l", "label": "Link", "name": "link", "type": "url" }
-            ]
+            "type": "relationship",
+            "post_type": ["post"],
+            "filters": ["search", "taxonomy"],
+            "taxonomy": [],
+            "return_format": "object",
+            "min": 0,
+            "max": 0,
+            "elements": ["featured_image"],
+            "instructions": "Chọn các bài viết báo chí/truyền thông muốn hiển thị."
         },
         {
             "key": "field_tab_home_8",

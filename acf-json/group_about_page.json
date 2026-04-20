@@ -1,0 +1,284 @@
+{
+    "key": "group_about_page",
+    "title": "About Page Content",
+    "fields": [
+        {
+            "key": "field_tab_ab_banner",
+            "label": "Banner",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_ab_banner_img",
+            "label": "Hình nền Banner",
+            "name": "ab_banner_img",
+            "type": "image",
+            "return_format": "array"
+        },
+        {
+            "key": "field_ab_banner_title",
+            "label": "Tiêu đề Banner",
+            "name": "ab_banner_title",
+            "type": "text",
+            "instructions": "Nếu để trống sẽ tự lấy tiêu đề trang"
+        },
+        {
+            "key": "field_tab_ab_1",
+            "label": "Về chúng tôi",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_ab1_title",
+            "label": "Tiêu đề",
+            "name": "ab1_title",
+            "type": "text",
+            "default_value": "Về chúng tôi"
+        },
+        {
+            "key": "field_ab1_content",
+            "label": "Nội dung",
+            "name": "ab1_content",
+            "type": "wysiwyg"
+        },
+        {
+            "key": "field_ab1_gallery",
+            "label": "Thư viện Ảnh Slider",
+            "name": "ab1_gallery",
+            "type": "gallery",
+            "return_format": "array"
+        },
+        {
+            "key": "field_tab_ab_2",
+            "label": "Sứ mệnh & Tầm nhìn",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_ab2_items",
+            "label": "Danh sách Sứ mệnh/Tầm nhìn",
+            "name": "ab2_items",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                { "key": "field_ab2_i_icon", "label": "Icon", "name": "icon", "type": "image", "return_format": "array" },
+                { "key": "field_ab2_i_title", "label": "Tiêu đề", "name": "title", "type": "text" },
+                { "key": "field_ab2_i_content", "label": "Nội dung", "name": "content", "type": "wysiwyg" }
+            ]
+        },
+        {
+            "key": "field_ab2_image",
+            "label": "Hình ảnh bên phải",
+            "name": "ab2_image",
+            "type": "image",
+            "return_format": "array"
+        },
+        {
+            "key": "field_tab_ab_3",
+            "label": "Giá trị cốt lõi",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_ab3_title",
+            "label": "Tiêu đề",
+            "name": "ab3_title",
+            "type": "text",
+            "default_value": "Giá trị cốt lõi"
+        },
+        {
+            "key": "field_ab3_items",
+            "label": "Danh sách Giá trị",
+            "name": "ab3_items",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                { "key": "field_ab3_i_title", "label": "Tiêu đề", "name": "title", "type": "text" },
+                { "key": "field_ab3_i_subtitle", "label": "Mô tả ngắn", "name": "subtitle", "type": "text" },
+                {
+                    "key": "field_ab3_i_list",
+                    "label": "Danh sách diễn giải",
+                    "name": "list",
+                    "type": "repeater",
+                    "layout": "table",
+                    "sub_fields": [
+                        { "key": "field_ab3_i_l_text", "label": "Nội dung", "name": "text", "type": "text" }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_ab3_img_circle",
+            "label": "Hình khối tròn bên dưới",
+            "name": "ab3_img_circle",
+            "type": "image",
+            "return_format": "array"
+        },
+        {
+            "key": "field_tab_ab_4",
+            "label": "Diễn giả",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_ab4_title",
+            "label": "Tiêu đề",
+            "name": "ab4_title",
+            "type": "text",
+            "default_value": "Diễn giả"
+        },
+        {
+            "key": "field_ab4_speakers",
+            "label": "Chọn Diễn giả",
+            "name": "ab4_speakers",
+            "type": "relationship",
+            "post_type": ["giang_vien"],
+            "return_format": "object"
+        },
+        {
+            "key": "field_ab4_btn",
+            "label": "Nút Xem thêm",
+            "name": "ab4_btn",
+            "type": "link",
+            "return_format": "array"
+        },
+        {
+            "key": "field_tab_ab_5",
+            "label": "Triết lý KD",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_ab5_bg",
+            "label": "Hình nền",
+            "name": "ab5_bg",
+            "type": "image",
+            "return_format": "array"
+        },
+        {
+            "key": "field_ab5_title",
+            "label": "Tiêu đề",
+            "name": "ab5_title",
+            "type": "text",
+            "default_value": "Triết lý kinh doanh"
+        },
+        {
+            "key": "field_ab5_items",
+            "label": "Các Triết lý",
+            "name": "ab5_items",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                { "key": "field_ab5_i_title", "label": "Tiêu đề", "name": "title", "type": "text" },
+                { "key": "field_ab5_i_desc", "label": "Mô tả", "name": "desc", "type": "wysiwyg" }
+            ]
+        },
+        {
+            "key": "field_tab_ab_6",
+            "label": "Hệ sinh thái",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_ab6_title",
+            "label": "Tiêu đề",
+            "name": "ab6_title",
+            "type": "text",
+            "default_value": "Hệ sinh thái SB"
+        },
+        {
+            "key": "field_ab6_subtitle",
+            "label": "Phụ đề",
+            "name": "ab6_subtitle",
+            "type": "text"
+        },
+        {
+            "key": "field_ab6_items_top",
+            "label": "Logo (Hàng trên)",
+            "name": "ab6_items_top",
+            "type": "repeater",
+            "layout": "table",
+            "sub_fields": [
+                { "key": "field_ab6_t_logo", "label": "Logo", "name": "logo", "type": "image", "return_format": "array" },
+                { "key": "field_ab6_t_text", "label": "Text", "name": "text", "type": "text" }
+            ]
+        },
+        {
+            "key": "field_ab6_items_middle",
+            "label": "Logo (Hàng giữa)",
+            "name": "ab6_items_middle",
+            "type": "repeater",
+            "layout": "table",
+            "sub_fields": [
+                { "key": "field_ab6_m_logo", "label": "Logo", "name": "logo", "type": "image", "return_format": "array" },
+                { "key": "field_ab6_m_text", "label": "Text", "name": "text", "type": "text" }
+            ]
+        },
+        {
+            "key": "field_ab6_items_bottom",
+            "label": "Logo (Hàng dưới)",
+            "name": "ab6_items_bottom",
+            "type": "repeater",
+            "layout": "table",
+            "sub_fields": [
+                { "key": "field_ab6_b_logo", "label": "Logo", "name": "logo", "type": "image", "return_format": "array" },
+                { "key": "field_ab6_b_text", "label": "Text", "name": "text", "type": "text" }
+            ]
+        },
+        {
+            "key": "field_ab6_desc",
+            "label": "Mô tả bên dưới",
+            "name": "ab6_desc",
+            "type": "wysiwyg"
+        },
+        {
+            "key": "field_tab_ab_7",
+            "label": "Hợp tác",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_ab7_title",
+            "label": "Tiêu đề",
+            "name": "ab7_title",
+            "type": "text",
+            "default_value": "Hợp tác cùng Success Business"
+        },
+        {
+            "key": "field_ab7_subtitle",
+            "label": "Phụ đề",
+            "name": "ab7_subtitle",
+            "type": "text"
+        },
+        {
+            "key": "field_ab7_items",
+            "label": "Danh sách Lợi ích",
+            "name": "ab7_items",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                { "key": "field_ab7_i_icon", "label": "Icon", "name": "icon", "type": "image", "return_format": "array" },
+                { "key": "field_ab7_i_title", "label": "Tiêu đề", "name": "title", "type": "text" },
+                { "key": "field_ab7_i_desc", "label": "Mô tả", "name": "desc", "type": "wysiwyg" }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates/template-about.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}
