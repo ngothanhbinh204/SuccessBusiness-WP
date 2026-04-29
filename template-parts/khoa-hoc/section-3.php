@@ -1,11 +1,8 @@
 <?php
-// Section 3: Giá trị nhận được – check list + hình parallax sticky
 $heading            = get_field('kh3_heading');
 $outcomes           = get_field('course_outcomes');
 $image              = get_field('kh3_image');
-// Shared CTA – dùng chung toàn trang (xem hàm canhcam_get_course_cta() trong function-custom.php)
 extract( canhcam_get_course_cta() );
-// $show_register, $register_url, $register_label, $register_target, $brochure_file, $brochure_btn_title
 
 if (!$outcomes && !$image) return;
 ?>

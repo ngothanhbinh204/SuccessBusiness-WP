@@ -1,11 +1,12 @@
 <?php
-$title = get_field('home_2_title') ?: 'Chương trình đào tạo';
+$title = get_field('home_2_title') ?: __('Chương trình đào tạo', 'canhcamtheme');
+$banner = get_field('home_2_banner');
 $content = get_field('home_2_content');
 $counters = get_field('home_2_counters');
 $btn = get_field('home_2_btn');
 $image = get_field('home_2_image');
 ?>
-<section class="section-home-2" data-bg-options='{"src": "<?php echo get_template_directory_uri(); ?>/img/banner.jpg"}'>
+<section class="section-home-2" data-bg-options='{"src": "<?php echo get_image_attrachment($banner, 'url') ?>"}'>
     <div class="container">
         <div class="warp-home-2" data-stick-layout>
             <div class="block-left" data-gsap-options='{"type": "fade-right", "delay": 0.3, "duration": 0.8}'>

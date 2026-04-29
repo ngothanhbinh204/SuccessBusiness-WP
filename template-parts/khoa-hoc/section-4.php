@@ -1,10 +1,7 @@
 <?php
-// Section 4: Lộ trình học tập (3-col sync swiper) + Giảng viên swiper
 $curriculum         = get_field('curriculum_display');
 $instructors        = get_field('instructors');
-// Shared CTA – dùng chung toàn trang (xem hàm canhcam_get_course_cta() trong function-custom.php)
 extract( canhcam_get_course_cta() );
-// $show_register, $register_url, $register_label, $register_target, $brochure_file, $brochure_btn_title
 
 if (!$curriculum && !$instructors) return;
 ?>
@@ -13,10 +10,8 @@ if (!$curriculum && !$instructors) return;
 		<div class="container">
 
 			<?php if ($curriculum): ?>
-			<!-- Sync Swiper 3 cột: menu trái / ảnh giữa / nội dung phải -->
 			<div class="block-main course-sync-container section-course-sync row" data-id-swiper="course-01">
 
-				<!-- Cột trái: danh sách buổi học -->
 				<div class="col-lg-4 box-left course-menu">
 					<div class="swiper">
 						<div class="swiper-wrapper">
@@ -38,7 +33,6 @@ if (!$curriculum && !$instructors) return;
 					</div>
 				</div>
 
-				<!-- Cột giữa: hình ảnh từng buổi -->
 				<div class="col-lg-4 box-mid course-images">
 					<div class="swiper">
 						<div class="swiper-wrapper">
@@ -64,12 +58,12 @@ if (!$curriculum && !$instructors) return;
 					</div>
 				</div>
 
-				<!-- Cột phải: tiêu đề + nội dung + nút -->
 				<div class="col-lg-4 box-right course-content">
 					<div class="swiper">
 						<div class="swiper-wrapper">
 							<?php foreach ($curriculum as $index => $item):
                                 $module_title   = $item['module_title'];
+								$module_sub_title   = $item['module_sub_title'];
                                 $module_content = $item['module_content'];
 								$text_buoi = __('Buổi', 'canhcamtheme');
 								$label = $text_buoi . ' ' . ($index + 1);
@@ -79,8 +73,8 @@ if (!$curriculum && !$instructors) return;
 									<div class="item-right-top">
 										<div class="item-right-icon"><strong><?php echo esc_html($label); ?></strong>
 										</div>
-										<?php if ($module_title): ?>
-										<h3 class="heading-3"><?php echo esc_html($module_title); ?></h3>
+										<?php if ($module_sub_title): ?>
+										<h3 class="heading-3"><?php echo esc_html($module_sub_title); ?></h3>
 										<?php endif; ?>
 									</div>
 
@@ -124,11 +118,10 @@ if (!$curriculum && !$instructors) return;
 					</div>
 				</div>
 
-			</div><!-- /.block-main -->
+			</div>
 			<?php endif; ?>
 
 			<?php if ($instructors): ?>
-			<!-- Swiper giảng viên -->
 			<div class="block-swiper">
 				<div class="swiper-column-auto auto-1-column" data-id-swiper="courseDetail-4"
 					data-swiper-options='{"effect": "fade", "speed": 1200, "fadeEffect": { "crossFade": true }}'>

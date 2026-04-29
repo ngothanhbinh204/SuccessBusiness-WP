@@ -1,6 +1,6 @@
 <?php
 $HomePageId = get_option('page_on_front');
-$title = get_field('home_8_title', $HomePageId) ?: 'Hợp tác cùng <strong>SUCCESS BUSINESS</strong>';
+$title = get_field('home_8_title', $HomePageId) ?: __('Hợp tác cùng <strong>SUCCESS BUSINESS</strong>', 'canhcamtheme');
 $subtitle = get_field('home_8_subtitle', $HomePageId);
 $image = get_field('home_8_image', $HomePageId);
 $form_shortcode = get_field('home_8_form_shortcode', $HomePageId); // [contact-form-7 id="..."]
@@ -34,7 +34,7 @@ $form_shortcode = get_field('home_8_form_shortcode', $HomePageId); // [contact-f
                         echo do_shortcode($form_shortcode);
                     } else {
                         // Fallback static form
-                        echo '<p>Vui lòng chọn shortcode Contact Form 7 trong ACF Admin</p>';
+                        echo '<p>' . __('Vui lòng chọn shortcode Contact Form 7 trong ACF Admin', 'canhcamtheme') . '</p>';
                     }
                     ?>
 				</div>

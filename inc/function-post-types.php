@@ -49,6 +49,18 @@ create_taxonomy('loai_khoa_hoc', array(
 	'name' => 'Loại khóa học',
 	'object_type' => array('khoa_hoc'),
 	'slug' => 'loai-khoa-hoc',
+	'custom_labels' => array(
+		'name'              => 'Loại khóa học',
+		'singular_name'     => 'Loại khóa học',
+		'menu_name'        => 'Loại khóa học',
+		'all_items'        => 'Tất cả Loại khóa học',
+		'edit_item'        => 'Sửa Loại khóa học',
+		'view_item'        => 'Xem Loại khóa học',
+		'update_item'      => 'Cập nhật Loại khóa học',
+		'add_new_item'     => 'Thêm Loại khóa học mới',
+		'new_item_name'   => 'Tên Loại khóa học mới',
+		'search_items'    => 'Tìm kiếm Loại khóa học',
+	),
 ));
 
 // Đăng ký Post Type Giảng viên

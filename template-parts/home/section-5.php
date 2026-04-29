@@ -1,5 +1,5 @@
 <?php
-$title = get_field('home_5_title') ?: 'Câu chuyện thành công';
+$title = get_field('home_5_title') ?: __('Câu chuyện thành công', 'canhcamtheme');
 $testimonials = get_field('home_5_testimonials');
 $partners = get_field('home_5_partners');
 ?>

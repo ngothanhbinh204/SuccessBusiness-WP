@@ -1,8 +1,6 @@
 <?php
-// Banner parallax + breadcrumb – dùng ảnh nền từ ACF hoặc fallback thumbnail bài viết
 $banner_img = get_field('kh_banner_img');
 if (!$banner_img) {
-    // Fallback: dùng featured image của post
     $thumb_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
 }
 ?>

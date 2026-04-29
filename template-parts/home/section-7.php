@@ -3,7 +3,7 @@
  * Section 7: Truyền thông – chọn bài viết tùy ý qua relationship field
  * ACF field: home_7_news (relationship: post, return: object)
  */
-$title = get_field('home_7_title') ?: 'Truyền Thông Nói Gì<br>về Success Business School';
+$title = get_field('home_7_title') ?: __('Truyền Thông Nói Gì<br>về Success Business School', 'canhcamtheme');
 $news  = get_field('home_7_news'); // array of WP_Post objects
 if ($news):
 ?>

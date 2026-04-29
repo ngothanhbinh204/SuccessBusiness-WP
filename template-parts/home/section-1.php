@@ -3,7 +3,7 @@
  * Section 1: Chương trình đào tạo (tabs theo Loại khóa học)
  * ACF field: home_1_loai_kh (taxonomy: loai_khoa_hoc, multi_select, return: object)
  */
-$title = get_field('home_1_title') ?: 'Chương trình đào tạo';
+$title = get_field('home_1_title') ?: __('Chương trình đào tạo', 'canhcamtheme');
 $terms = get_field('home_1_loai_kh'); // array of WP_Term objects
 
 // Fallback: lấy tất cả loại khóa học nếu không có chọn
@@ -65,7 +65,7 @@ if ($terms && !is_wp_error($terms)):
 									<div class="swiper-wrapper h-auto">
 										<?php while ($all_courses_query->have_posts()): $all_courses_query->the_post();
 											$course_id  = get_the_ID();
-											$start_date = get_field('start_date', $course_id) ?: 'Sắp khai giảng';
+											$start_date = get_field('start_date', $course_id) ?: __('Sắp khai giảng', 'canhcamtheme');
 										?>
 										<div class="swiper-slide">
 											<a class="group card-course" href="<?php the_permalink(); ?>">
@@ -110,13 +110,12 @@ if ($terms && !is_wp_error($terms)):
 										<?php while ($courses_query->have_posts()): $courses_query->the_post();
                                             $course_id  = get_the_ID();
                                             $thumb      = get_the_post_thumbnail_url($course_id, 'large') ?: 'https://picsum.photos/600/400';
-                                            $start_date = get_field('start_date', $course_id) ?: 'Sắp khai giảng';
+                                            $start_date = get_field('start_date', $course_id) ?: __('Sắp khai giảng', 'canhcamtheme');
                                         ?>
 										<div class="swiper-slide">
 											<a class="group card-course" href="<?php the_permalink(); ?>">
 												<div class="card-img">
 													<div class="img img-ratio ratio:pt-[296_455] zoom-img">
-														<!-- <img class="lozad" data-src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"/> -->
 														<?php echo get_image_post($course_id, 'image'); ?>
 													</div>
 												</div>

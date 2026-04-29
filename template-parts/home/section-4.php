@@ -55,8 +55,7 @@ if ($events):
 											</div>
 										</div>
 										<?php if ($time): ?>
-										<div class="item-time-event"><span>Thời gian diễn
-												ra:</span><strong><?php echo esc_html($time); ?></strong></div>
+										<div class="item-time-event"><span><?php _e('Thời gian diễn ra:', 'canhcamtheme'); ?></span><strong><?php echo esc_html($time); ?></strong></div>
 										<?php endif; ?>
 									</div>
 								</div>

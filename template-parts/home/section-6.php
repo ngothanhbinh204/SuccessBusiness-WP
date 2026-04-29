@@ -3,7 +3,7 @@
  * Section 6: Bài viết theo Danh mục (tabs theo category WordPress)
  * ACF field: home_6_categories (taxonomy: category, multi_select, return: object)
  */
-$title = get_field('home_6_title') ?: 'Tin tức & Kiến thức';
+$title = get_field('home_6_title') ?: __('Tin tức & Kiến thức', 'canhcamtheme');
 $cats  = get_field('home_6_categories'); // array of WP_Term objects
 
 // Fallback: lấy tất cả category nếu không có chọn

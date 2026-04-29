@@ -30,14 +30,6 @@
             "default_value": "Hỗ trợ khách hàng"
         },
         {
-            "key": "field_faq_icon",
-            "label": "Icon FAQ",
-            "name": "faq_icon",
-            "type": "image",
-            "return_format": "array",
-            "instructions": "Icon hiển thị bên phải tiêu đề mỗi câu hỏi. Để trống sẽ dùng icon mặc định trong thư mục /img/."
-        },
-        {
             "key": "field_faq_filter_tabs",
             "label": "Danh mục lọc",
             "name": "faq_filter_tabs",
@@ -58,7 +50,7 @@
             "label": "Danh sách câu hỏi",
             "name": "faq_items",
             "type": "repeater",
-            "layout": "row",
+            "layout": "table",
             "button_label": "Thêm câu hỏi",
             "sub_fields": [
                 {

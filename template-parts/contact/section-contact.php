@@ -53,13 +53,13 @@ $ct_form_shortcode = get_field('ct_form_shortcode');
 					<div class="iframe-map" data-lenis-prevent>
 						<div class="img img-ratio ratio:pt-[252_480] rounded-4">
 							<?php if($ct_map_url): ?>
-							<?php echo esc_html($ct_map_url); ?>
+							<?php echo ($ct_map_url); ?>
 							<?php endif; ?>
 						</div>
 					</div>
 					<?php endif; ?>
 
-				</div><!-- .col-lg-5 -->
+				</div>
 
 				<div class="col-lg-7">
 
@@ -73,7 +73,7 @@ $ct_form_shortcode = get_field('ct_form_shortcode');
 					</div>
 					<?php endif; ?>
 
-				</div><!-- .col-lg-7 -->
+				</div>
 
 			</div>
 		</div>

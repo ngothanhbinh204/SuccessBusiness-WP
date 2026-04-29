@@ -1,12 +1,9 @@
 <?php
-// Section 2: Khóa học dành cho ai – check list + gallery swiper
 $heading            = get_field('kh2_heading');
 $subtitle           = get_field('kh2_subtitle');
 $audiences          = get_field('target_audiences');
 $gallery            = get_field('kh2_gallery');
-// Shared CTA – dùng chung toàn trang (xem hàm canhcam_get_course_cta() trong function-custom.php)
 extract( canhcam_get_course_cta() );
-// $show_register, $register_url, $register_label, $register_target, $brochure_file, $brochure_btn_title
 
 if (!$heading && !$audiences && !$gallery) return;
 ?>
@@ -67,10 +64,12 @@ if (!$heading && !$audiences && !$gallery) return;
 						<div class="swiper-wrapper">
 							<?php foreach ($gallery as $img): ?>
 							<div class="swiper-slide">
-								<div class="img img-ratio ratio:pt-[668_1400] rounded-6 zoom-img">
+								<a class="img img-ratio ratio:pt-[668_1400] rounded-6 zoom-img"
+									data-fancybox="course-gallery" data-caption="<?php echo esc_attr($img['alt']) ?>"
+									href="<?php echo esc_url($img['url']); ?>">
 									<img class="lozad" data-src="<?php echo esc_url($img['url']); ?>"
 										alt="<?php echo esc_attr($img['alt']); ?>" />
-								</div>
+								</a>
 							</div>
 							<?php endforeach; ?>
 						</div>

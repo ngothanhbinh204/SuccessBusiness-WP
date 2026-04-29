@@ -1,12 +1,9 @@
 <?php
-// Section 1: Hero – Tiêu đề, phụ đề, mô tả, nút CTA, hình ảnh
 $title              = get_the_title();
 $subtitle           = get_field('kh1_subtitle');
 $description        = get_field('kh1_description');
 $hero_image         = get_field('kh1_hero_image');
-// Shared CTA – dùng chung toàn trang (xem hàm canhcam_get_course_cta() trong function-custom.php)
 extract( canhcam_get_course_cta() );
-// $show_register, $register_url, $register_label, $register_target, $brochure_file, $brochure_btn_title
 ?>
 <section class="section-courseDetail-1">
 	<div class="container">

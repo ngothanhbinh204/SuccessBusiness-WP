@@ -16,6 +16,13 @@
             "type": "image",
             "return_format": "array"
         },
+		{
+			"key": "field_post_archive_banner_img",
+			"label": "Banner trang Danh sách Tin tức",
+			"name": "post_archive_banner_img",
+			"type": "image",
+			"return_format": "array"
+		},
         {
             "key": "field_course_archive_banner_title",
             "label": "Tiêu đề banner trang Khóa học",
@@ -111,8 +118,7 @@
             "key": "field_cta_phone",
             "label": "Số điện thoại hiển thị",
             "name": "cta_phone",
-            "type": "text",
-            "instructions": "VD: 1900 2273 – (028) 7100 0001"
+            "type": "wysiwyg"
         },
         {
             "key": "field_cta_socials",

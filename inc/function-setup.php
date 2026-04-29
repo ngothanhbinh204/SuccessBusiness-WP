@@ -30,6 +30,15 @@ function canhcam_style()
 
 	wp_enqueue_style('frontend-style-global', THEME_URI . '/styles/core.min.css', array(), GENERATE_VERSION);
 	wp_enqueue_style('frontend-style-main', THEME_URI . '/styles/main.min.css', array(), GENERATE_VERSION);
+	
+	// Conditional styles
+	if (is_page_template('template-faq.php') || is_page_template('page-templates/template-faq.php')) {
+		wp_enqueue_style('faq-filter-style', THEME_URI . '/styles/faq-filter.css', array(), GENERATE_VERSION);
+	}
+	
+	if (is_search()) {
+		wp_enqueue_style('search-style', THEME_URI . '/styles/search.css', array(), GENERATE_VERSION);
+	}
 
 	/**
 	 * Script
@@ -40,6 +49,11 @@ function canhcam_style()
 			if (stripos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') === false) {
 				wp_enqueue_script('front-end-global', THEME_URI . '/scripts/core.min.js', '', '', true);
 				wp_enqueue_script('front-end-main', THEME_URI . '/scripts/main.min.js', '', '', true);
+				
+				// Conditional scripts
+				if (is_page_template('template-faq.php') || is_page_template('page-templates/template-faq.php')) {
+					wp_enqueue_script('faq-filter', THEME_URI . '/scripts/faq-filter.js', array('jquery'), GENERATE_VERSION, true);
+				}
 			}
 		}
 	}
@@ -99,12 +113,12 @@ function add_css_admin_menu()
 {
 	if (is_user_logged_in()) {
 ?>
-		<style>
-			header {
-				top: 32px !important;
-			}
-		</style>
-	<?php
+<style>
+header {
+	top: 32px !important;
+}
+</style>
+<?php
 	}
 }
 add_action('wp_head', 'add_css_admin_menu');
@@ -173,16 +187,17 @@ function my_login_logo_url()
 add_filter('login_headerurl', 'my_login_logo_url');
 function my_login_logo()
 { ?>
-	<style type="text/css">
-		#login h1 a,
-		.login h1 a {
-			background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/logo-canh-cam.png);
-			height: 49px;
-			width: 267px;
-			background-size: 267px auto;
-			background-repeat: no-repeat;
-		}
-	</style>
+<style type="text/css">
+#login h1 a,
+.login h1 a {
+	background-image: url(<?php echo get_stylesheet_directory_uri();
+	?>/img/logo-canh-cam.png);
+	height: 49px;
+	width: 267px;
+	background-size: 267px auto;
+	background-repeat: no-repeat;
+}
+</style>
 <?php }
 add_action('login_enqueue_scripts', 'my_login_logo');
 function my_login_stylesheet()
